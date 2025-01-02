@@ -461,7 +461,7 @@ export default function RootLayout({
                         <div className="w-2 h-2 rounded-full bg-green-400 border border-white absolute inset-0 mb-0 mr-0 m-auto" />
                       </div>
                     </div>
-                    <p className="text-gray-800 text-sm mx-3">Mr.Huzaifa</p>
+                    <p className="text-gray-800 text-sm mx-3">Ashraf</p>
                     <div className="cursor-pointer text-gray-600">
                       <svg
                         aria-haspopup="true"
