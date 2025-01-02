@@ -55,7 +55,7 @@ const Attendance = () => {
             <tbody className="w-full">
               <tr className=" h-20 text-sm leading-none text-gray-800 bg-white hover:bg-gray-100 border-b border-t border-gray-400">
                 <td className="">
-                  Khizar Wakeel
+                  Ali Raza
                 </td>
                 <td className="">
                   <img src="/check.png" className="w-4" alt="" />
