@@ -189,8 +189,8 @@ export default function RootLayout({
           <div className="absolute z-40 sm:relative w-64 md:w-96 h-[100vh] scroll-smooth overflow-y-auto shadow pb-4 bg-gray-900 lg:hidden transition duration-150 ease-in-out custom-scrollbar">
             <div className="flex justify-between items-center">
               <div className="lg:hidden flex justify-start p-6 items-center gap-x-3">
-                <img src="/logo.png" alt="" className="w-9 h-12" />
-                <p className="text-2xl leading-6 text-white">Bawdicsoft</p>
+                <img src="/logo.png" alt="" className="w-39 h-22" />
+             
               </div>
               <div
                 id="closeSideBar"
