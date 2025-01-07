@@ -1,9 +1,9 @@
 import Link from "next/link";
 import { message, Space, Spin } from "antd";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useRouter } from 'next/navigation'
 
 export default function Login() {
-   const navigate = useNavigate();
+  const router = useRouter()
    //alert api
   const [messageApi, contextHolder] = message.useMessage();
 
@@ -59,7 +59,7 @@ export default function Login() {
           });
         } else {
           setLoading(false);
-          return navigate("/home");
+         router.push('/dashboard');
         }
       });
     }
@@ -88,7 +88,7 @@ export default function Login() {
           });
         } else {
           setLoading(false);
-          return navigate("/home");
+         router.push('/dashboard');
         }
       });
     }
@@ -117,7 +117,7 @@ export default function Login() {
           });
         } else {
           setLoading(false);
-          return navigate("/home");
+         router.push('/dashboard');
         }
       });
     }
