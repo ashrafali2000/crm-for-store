@@ -28,7 +28,6 @@ const [loading, setLoading] = useState<boolean>(false);
   setFormData({ ...formData, [e.target.name]: e.target.value });
 };
 
-// "antd": "^5.7.2",
   // login function
   const handleFormSubmit = async(e:any) => {
     e.preventDefault();
