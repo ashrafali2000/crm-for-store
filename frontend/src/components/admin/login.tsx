@@ -49,7 +49,7 @@ export default function Login() {
                   <div className="mt-10">
                     <Link
                       href="/admin-dashboard"
-                      className="bg-indigo-500 text-gray-100 p-4 w-full rounded-md tracking-wide
+                      className="bg-indigo-500 text-gray-100 px-4 py-2 w-full rounded-md tracking-wide
                                 font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600
                                 shadow-lg"
                     >
