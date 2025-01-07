@@ -98,7 +98,7 @@ const [loading, setLoading] = useState<boolean>(false);
                   <div className="mb-4">
                     <label
                       className="block text-sm font-bold mb-2 "
-                      htmlFor="Email"
+                      htmlFor="password"
                     >
                       Password
                     </label>
