@@ -15,7 +15,7 @@ export default function Login() {
   const [messageApi, contextHolder] = message.useMessage();
 
   //loading state
-  const [loading, setLoading] = useState<any>(false);
+const [loading, setLoading] = useState<boolean>(false);
 
  //form state
   const [formData, setFormData] = useState<User>({
@@ -24,9 +24,9 @@ export default function Login() {
     password: "",
   });
 
-  const handleFormChange = (e:any) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+ const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+  setFormData({ ...formData, [e.target.name]: e.target.value });
+};
 
 // "antd": "^5.7.2",
   // login function
@@ -41,101 +41,7 @@ export default function Login() {
 
 
     
-    // if (formData.type === "") {
-    //   return messageApi.open({
-    //     type: "error",
-    //     content: "Please select user type.",
-    //     duration: 3,
-    //   });
-    // }
-    // setLoading(true);
-    // if (formData.type === "admin") {
-      // dispatch(adminRegister(formData)).then((res) => {
-      //   if (res.message === "Wrong credentials") {
-      //     setLoading(false);
-      //     messageApi.open({
-      //       type: "info",
-      //       content: "Wrong credentials !",
-      //       duration: 3,
-      //     });
-      //   } else if (res.message === "Access Denied") {
-      //     setLoading(false);
-      //     messageApi.open({
-      //       type: "info",
-      //       content: "Your access has been revoked by the admin !",
-      //       duration: 3,
-      //     });
-      //   } else if (res.message === "Error") {
-      //     setLoading(false);
-      //     messageApi.open({
-      //       type: "info",
-      //       content: "Something went wrong, please try again",
-      //       duration: 3,
-      //     });
-      //   } else {
-      //     setLoading(false);
-      //    router.push('/dashboard');
-      //   }
-      // });
-    // }
-    // if (formData.type === "tutor") {
-    //   dispatch(tutorRegister(formData)).then((res) => {
-    //     if (res.message === "Wrong credentials") {
-    //       setLoading(false);
-    //       messageApi.open({
-    //         type: "info",
-    //         content: "Wrong credentials !",
-    //         duration: 3,
-    //       });
-    //     } else if (res.message === "Access Denied") {
-    //       setLoading(false);
-    //       messageApi.open({
-    //         type: "info",
-    //         content: "Your access has been revoked by the admin !",
-    //         duration: 3,
-    //       });
-    //     } else if (res.message === "error") {
-    //       setLoading(false);
-    //       messageApi.open({
-    //         type: "info",
-    //         content: "Something went wrong, please try again",
-    //         duration: 3,
-    //       });
-    //     } else {
-    //       setLoading(false);
-    //      router.push('/dashboard');
-    //     }
-    //   });
-    // }
-    // if (formData.type === "student") {
-    //   dispatch(studentRegister(formData)).then((res) => {
-    //     if (res.message === "Wrong credentials") {
-    //       setLoading(false);
-    //       messageApi.open({
-    //         type: "info",
-    //         content: "Wrong credentials !",
-    //         duration: 3,
-    //       });
-    //     } else if (res.message === "Access Denied") {
-    //       setLoading(false);
-    //       messageApi.open({
-    //         type: "info",
-    //         content: "Your access has been revoked by the admin !",
-    //         duration: 3,
-    //       });
-    //     } else if (res.message === "error") {
-    //       setLoading(false);
-    //       messageApi.open({
-    //         type: "info",
-    //         content: "Something went wrong, please try again",
-    //         duration: 3,
-    //       });
-    //     } else {
-    //       setLoading(false);
-    //      router.push('/dashboard');
-    //     }
-    //   });
-    // }
+
   };
   return (
     <>
@@ -382,7 +288,9 @@ export default function Login() {
           </div>
         </div>
       </section>
-
+   </>
+  );
+}
       {/* <section className="flex w-full justify-center h-screen items-center">
       <div className="flex rounded-md border flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-white max-w-lg shadow-2xl ">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
@@ -449,7 +357,101 @@ export default function Login() {
           </form>
         </div>
       </div>
-      </section> */}
-    </>
-  );
-}
+      </section> 
+          // if (formData.type === "") {
+    //   return messageApi.open({
+    //     type: "error",
+    //     content: "Please select user type.",
+    //     duration: 3,
+    //   });
+    // }
+    // setLoading(true);
+    // if (formData.type === "admin") {
+      // dispatch(adminRegister(formData)).then((res) => {
+      //   if (res.message === "Wrong credentials") {
+      //     setLoading(false);
+      //     messageApi.open({
+      //       type: "info",
+      //       content: "Wrong credentials !",
+      //       duration: 3,
+      //     });
+      //   } else if (res.message === "Access Denied") {
+      //     setLoading(false);
+      //     messageApi.open({
+      //       type: "info",
+      //       content: "Your access has been revoked by the admin !",
+      //       duration: 3,
+      //     });
+      //   } else if (res.message === "Error") {
+      //     setLoading(false);
+      //     messageApi.open({
+      //       type: "info",
+      //       content: "Something went wrong, please try again",
+      //       duration: 3,
+      //     });
+      //   } else {
+      //     setLoading(false);
+      //    router.push('/dashboard');
+      //   }
+      // });
+    // }
+    // if (formData.type === "tutor") {
+    //   dispatch(tutorRegister(formData)).then((res) => {
+    //     if (res.message === "Wrong credentials") {
+    //       setLoading(false);
+    //       messageApi.open({
+    //         type: "info",
+    //         content: "Wrong credentials !",
+    //         duration: 3,
+    //       });
+    //     } else if (res.message === "Access Denied") {
+    //       setLoading(false);
+    //       messageApi.open({
+    //         type: "info",
+    //         content: "Your access has been revoked by the admin !",
+    //         duration: 3,
+    //       });
+    //     } else if (res.message === "error") {
+    //       setLoading(false);
+    //       messageApi.open({
+    //         type: "info",
+    //         content: "Something went wrong, please try again",
+    //         duration: 3,
+    //       });
+    //     } else {
+    //       setLoading(false);
+    //      router.push('/dashboard');
+    //     }
+    //   });
+    // }
+    // if (formData.type === "student") {
+    //   dispatch(studentRegister(formData)).then((res) => {
+    //     if (res.message === "Wrong credentials") {
+    //       setLoading(false);
+    //       messageApi.open({
+    //         type: "info",
+    //         content: "Wrong credentials !",
+    //         duration: 3,
+    //       });
+    //     } else if (res.message === "Access Denied") {
+    //       setLoading(false);
+    //       messageApi.open({
+    //         type: "info",
+    //         content: "Your access has been revoked by the admin !",
+    //         duration: 3,
+    //       });
+    //     } else if (res.message === "error") {
+    //       setLoading(false);
+    //       messageApi.open({
+    //         type: "info",
+    //         content: "Something went wrong, please try again",
+    //         duration: 3,
+    //       });
+    //     } else {
+    //       setLoading(false);
+    //      router.push('/dashboard');
+    //     }
+    //   });
+    // }*/}
+      
+ 
