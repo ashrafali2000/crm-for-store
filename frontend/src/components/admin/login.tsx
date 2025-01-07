@@ -1,43 +1,43 @@
 import Link from "next/link";
-import React, { useState } from "react";
-import { message, Space, Spin } from "antd";
+// import React, { useState } from "react";
+// import { message, Space, Spin } from "antd";
 // import { useRouter } from 'next/navigation'
-import axios from "axios";
+// import axios from "axios";
 // import url from "../../BackendURL.js";
-interface User {
-  name: string;
-  email: string;
-  password: string;
-}
+// interface User {
+//   name: string;
+//   email: string;
+//   password: string;
+// }
 export default function Login() {
   // const router = useRouter()
    //alert api
-  const [messageApi, contextHolder] = message.useMessage();
+  // const [messageApi, contextHolder] = message.useMessage();
 
   //loading state
-const [loading, setLoading] = useState<boolean>(false);
+// const [loading, setLoading] = useState<boolean>(false);
 
  //form state
-  const [formData, setFormData] = useState<User>({
-    name: "",
-    email: "",
-    password: "",
-  });
+  // const [formData, setFormData] = useState<User>({
+  //   name: "",
+  //   email: "",
+  //   password: "",
+  // });
 
- const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-  setFormData({ ...formData, [e.target.name]: e.target.value });
-};
+//  const handleFormChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+//   setFormData({ ...formData, [e.target.name]: e.target.value });
+// };
 
   // login function
-  const handleFormSubmit = async(e:any) => {
-    e.preventDefault();
-  try {
-    const res = await axios.post(`https://crm-for-store-bz37.vercel.app/admin/register`, formData );
-    console.log( "response===>",res.data);
-  } catch (error) {
- console.log( "response===>", res.data);
-  }
-  };
+ //  const handleFormSubmit = async(e:any) => {
+ //    e.preventDefault();
+ //  try {
+ //    const res = await axios.post(`https://crm-for-store-bz37.vercel.app/admin/register`, formData );
+ //    console.log( "response===>",res.data);
+ //  } catch (error) {
+ // console.log( "response===>", res.data);
+ //  }
+ //  };
 
   
   return (
@@ -56,7 +56,8 @@ const [loading, setLoading] = useState<boolean>(false);
               </h2>
 
               <div className="mt-12">
-                <form onSubmit={handleFormSubmit}>
+{/*                 <form onSubmit={handleFormSubmit}> */}
+                <form >
                   <div className="mb-4">
                     <label
                       className="block text-sm font-bold mb-2 "
@@ -69,8 +70,8 @@ const [loading, setLoading] = useState<boolean>(false);
                       type="text"
                         required
                 name="name"
-                value={formData.name}
-                onChange={handleFormChange}
+{/*                 value={formData.name} */}
+{/*                 onChange={handleFormChange} */}
                       className=" border outline-none border-indigo-600  text-sm rounded-md  focus:border-indigo-600 block w-full p-2.5 :bg-gray-700 :border-gray-600 placeholder-gray-800 :text-white :focus:ring-blue-500 :focus:border-blue-500"
                       placeholder="Enter your Name"
                     />
@@ -87,8 +88,8 @@ const [loading, setLoading] = useState<boolean>(false);
                       type="email"
                         required
                 name="email"
-                value={formData.email}
-                onChange={handleFormChange}
+{/*                 value={formData.email} */}
+{/*                 onChange={handleFormChange} */}
                       className=" border outline-none border-indigo-600  text-sm rounded-md  focus:border-indigo-600 block w-full p-2.5 :bg-gray-700 :border-gray-600 placeholder-gray-800 :text-white :focus:ring-blue-500 :focus:border-blue-500"
                       placeholder="Enter your email"
                     />
@@ -105,8 +106,8 @@ const [loading, setLoading] = useState<boolean>(false);
                       type="password"
                       required
                      name="password"
-                     value={formData.password}
-                    onChange={handleFormChange}
+{/*                      value={formData.password} */}
+{/*                     onChange={handleFormChange} */}
                       className=" border outline-none border-indigo-600  text-sm rounded-md  focus:border-indigo-600 block w-full p-2.5 :bg-gray-700 :border-gray-600 placeholder-gray-800 :text-white :focus:ring-blue-500 :focus:border-blue-500"
                       placeholder="Enter your password"
                     />
