@@ -24,7 +24,7 @@ export default function Login() {
 
 // "antd": "^5.7.2",
   // login function
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async(e) => {
     e.preventDefault();
   try {
     const res = await axios.post(`${url}/admin/register`, formData );
