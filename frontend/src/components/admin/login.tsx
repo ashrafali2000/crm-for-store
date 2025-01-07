@@ -1,7 +1,7 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { message, Space, Spin } from "antd";
-import { useRouter } from 'next/navigation'
+// import { useRouter } from 'next/navigation'
 import axios from "axios";
 // import url from "../../BackendURL.js";
 interface User {
@@ -10,7 +10,7 @@ interface User {
   password: string;
 }
 export default function Login() {
-  const router = useRouter()
+  // const router = useRouter()
    //alert api
   const [messageApi, contextHolder] = message.useMessage();
 
