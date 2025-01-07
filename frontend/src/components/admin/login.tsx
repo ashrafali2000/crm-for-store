@@ -1,6 +1,127 @@
 import Link from "next/link";
+import { message, Space, Spin } from "antd";
+import { Navigate, useNavigate } from "react-router-dom";
 
 export default function Login() {
+   const navigate = useNavigate();
+   //alert api
+  const [messageApi, contextHolder] = message.useMessage();
+
+  //loading state
+  const [loading, setLoading] = useState(false);
+
+ //form state
+  const [formData, setFormData] = useState({
+    type: "",
+    name: "",
+    email: "",
+    password: "",
+  });
+
+  const handleFormChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+// "antd": "^5.7.2",
+  // login function
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    if (formData.type === "") {
+      return messageApi.open({
+        type: "error",
+        content: "Please select user type.",
+        duration: 3,
+      });
+    }
+    setLoading(true);
+    if (formData.type === "admin") {
+      dispatch(adminRegister(formData)).then((res) => {
+        if (res.message === "Wrong credentials") {
+          setLoading(false);
+          messageApi.open({
+            type: "info",
+            content: "Wrong credentials !",
+            duration: 3,
+          });
+        } else if (res.message === "Access Denied") {
+          setLoading(false);
+          messageApi.open({
+            type: "info",
+            content: "Your access has been revoked by the admin !",
+            duration: 3,
+          });
+        } else if (res.message === "Error") {
+          setLoading(false);
+          messageApi.open({
+            type: "info",
+            content: "Something went wrong, please try again",
+            duration: 3,
+          });
+        } else {
+          setLoading(false);
+          return navigate("/home");
+        }
+      });
+    }
+    if (formData.type === "tutor") {
+      dispatch(tutorRegister(formData)).then((res) => {
+        if (res.message === "Wrong credentials") {
+          setLoading(false);
+          messageApi.open({
+            type: "info",
+            content: "Wrong credentials !",
+            duration: 3,
+          });
+        } else if (res.message === "Access Denied") {
+          setLoading(false);
+          messageApi.open({
+            type: "info",
+            content: "Your access has been revoked by the admin !",
+            duration: 3,
+          });
+        } else if (res.message === "error") {
+          setLoading(false);
+          messageApi.open({
+            type: "info",
+            content: "Something went wrong, please try again",
+            duration: 3,
+          });
+        } else {
+          setLoading(false);
+          return navigate("/home");
+        }
+      });
+    }
+    if (formData.type === "student") {
+      dispatch(studentRegister(formData)).then((res) => {
+        if (res.message === "Wrong credentials") {
+          setLoading(false);
+          messageApi.open({
+            type: "info",
+            content: "Wrong credentials !",
+            duration: 3,
+          });
+        } else if (res.message === "Access Denied") {
+          setLoading(false);
+          messageApi.open({
+            type: "info",
+            content: "Your access has been revoked by the admin !",
+            duration: 3,
+          });
+        } else if (res.message === "error") {
+          setLoading(false);
+          messageApi.open({
+            type: "info",
+            content: "Something went wrong, please try again",
+            duration: 3,
+          });
+        } else {
+          setLoading(false);
+          return navigate("/home");
+        }
+      });
+    }
+  };
   return (
     <>
       <section className="">
@@ -17,7 +138,7 @@ export default function Login() {
               </h2>
 
               <div className="mt-12">
-                <form>
+                <form onSubmit={handleFormSubmit}>
                   <div className="mb-4">
                     <label
                       className="block text-sm font-bold mb-2 "
@@ -28,6 +149,10 @@ export default function Login() {
                     <input
                       id="email"
                       type="email"
+                        required
+                name="email"
+                value={formData.email}
+                onChange={handleFormChange}
                       className=" border outline-none border-indigo-600  text-sm rounded-md  focus:border-indigo-600 block w-full p-2.5 :bg-gray-700 :border-gray-600 placeholder-gray-800 :text-white :focus:ring-blue-500 :focus:border-blue-500"
                       placeholder="Enter your email"
                     />
@@ -42,19 +167,23 @@ export default function Login() {
                     <input
                       id="password"
                       type="password"
+                      required
+                     name="password"
+                     value={formData.password}
+                    onChange={handleFormChange}
                       className=" border outline-none border-indigo-600  text-sm rounded-md  focus:border-indigo-600 block w-full p-2.5 :bg-gray-700 :border-gray-600 placeholder-gray-800 :text-white :focus:ring-blue-500 :focus:border-blue-500"
                       placeholder="Enter your password"
                     />
                   </div>
                   <div className="mt-10">
-                    <Link
-                      href="/admin-dashboard"
+                    <button
+                 
                       className="bg-indigo-500 text-gray-100 px-4 py-2 w-full rounded-md tracking-wide
                                 font-semibold font-display focus:outline-none focus:shadow-outline hover:bg-indigo-600
                                 shadow-lg"
                     >
                       Log In
-                    </Link>
+                    </button>
                   </div>
                 </form>
               </div>
