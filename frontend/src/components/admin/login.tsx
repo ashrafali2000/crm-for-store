@@ -4,16 +4,21 @@ import { message, Space, Spin } from "antd";
 import { useRouter } from 'next/navigation'
 import axios from "axios";
 import url from "../../BackendURL.js";
+interface User {
+  name: string;
+  email: string;
+  password: string;
+}
 export default function Login() {
   const router = useRouter()
    //alert api
   const [messageApi, contextHolder] = message.useMessage();
 
   //loading state
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState<any>(false);
 
  //form state
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<User>({
     name: "",
     email: "",
     password: "",
