@@ -24,13 +24,13 @@ export default function Login() {
     password: "",
   });
 
-  const handleFormChange = (e) => {
+  const handleFormChange = (e:any) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
 // "antd": "^5.7.2",
   // login function
-  const handleFormSubmit = async(e) => {
+  const handleFormSubmit = async(e:any) => {
     e.preventDefault();
   try {
     const res = await axios.post(`${url}/admin/register`, formData );
