@@ -34,8 +34,8 @@ const [loading, setLoading] = useState<boolean>(false);
   try {
     const res = await axios.post(`https://crm-for-store-bz37.vercel.app/admin/register`, formData );
     console.log( "response===>",res.data);
-  } catch (error) {
- console.log( "response===>", res.data);
+  } catch (error:any) {
+ console.log( "response===>", error);
   }
   };
 
