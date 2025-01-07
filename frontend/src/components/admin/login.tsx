@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { message, Space, Spin } from "antd";
 import { useRouter } from 'next/navigation'
 import axios from "axios";
-import url from "../../BackendURL.js";
+// import url from "../../BackendURL.js";
 interface User {
   name: string;
   email: string;
@@ -33,7 +33,7 @@ const [loading, setLoading] = useState<boolean>(false);
   const handleFormSubmit = async(e:any) => {
     e.preventDefault();
   try {
-    const res = await axios.post(`${url}/admin/register`, formData );
+    const res = await axios.post(`https://crm-for-store-bz37.vercel.app/admin/register`, formData );
     console.log( "response===>",res.data);
   } catch (error) {
  console.log( "response===>", res.data);
