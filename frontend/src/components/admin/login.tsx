@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { message, Space, Spin } from "antd";
 import { useRouter } from 'next/navigation'
 import axios from "axios";
-import url from "./BackendURL.js";
+import url from "../../BackendURL.js";
 interface User {
   name: string;
   email: string;
