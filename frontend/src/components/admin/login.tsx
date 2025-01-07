@@ -37,11 +37,9 @@ const [loading, setLoading] = useState<boolean>(false);
   } catch (error) {
  console.log( "response===>", res.data);
   }
-
-
-    
-
   };
+
+  
   return (
     <>
       <section className="">
