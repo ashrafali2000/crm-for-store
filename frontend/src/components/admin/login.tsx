@@ -151,12 +151,30 @@ export default function Login() {
                   <div className="mb-4">
                     <label
                       className="block text-sm font-bold mb-2 "
+                      htmlFor="name"
+                    >
+                      Name
+                    </label>
+                    <input
+                      id="name"
+                      type="text"
+                        required
+                name="name"
+                value={formData.name}
+                onChange={handleFormChange}
+                      className=" border outline-none border-indigo-600  text-sm rounded-md  focus:border-indigo-600 block w-full p-2.5 :bg-gray-700 :border-gray-600 placeholder-gray-800 :text-white :focus:ring-blue-500 :focus:border-blue-500"
+                      placeholder="Enter your Name"
+                    />
+                  </div>
+                  <div className="mb-4">
+                    <label
+                      className="block text-sm font-bold mb-2 "
                       htmlFor="Email"
                     >
                       Email Address
                     </label>
                     <input
-                      id="email"
+                      id="Email"
                       type="email"
                         required
                 name="email"
